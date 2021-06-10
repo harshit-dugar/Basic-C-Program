@@ -1,22 +1,37 @@
-// Sort elements of array in ascending order 
+//sort the arrsy in ascending order 
 #include <stdio.h>
+
 int main()
 {
-    int n,i,a[100];
-
-    printf("Enter the size of array:");
-    scanf("%d",&n);
-
-    for (i=0 ; i<n ; i++)
+    int a[100];
+    int n,i,j,min;
+    printf("Input the size of array : ");
+    scanf("%d", &n);
+    printf("Input %d elements in the array :\n",n);
+    for(i=0;i<n;i++)
     {
-        printf("Enter a[%d]:",i);    //for inputting array 
-        scanf("%d",&a[i]);
-    }
-    printf("The original array:");
-    for(i=0 ; i<n ; i++)            //print original array
+	    printf("element - %d : ",i);
+	    scanf("%d",&a[i]);
+	}
+
+    for(i=0; i<n; i++)
     {
-        printf("%d \t",a[i]);
+        for(j=i+1; j<n; j++)
+        {
+            if(a[j] <a[i])
+            {
+                min = a[i];
+                a[i] = a[j];
+                a[j] = min;
+            }
+        }
     }
+    printf("\nElements of array in sorted ascending order:\n");
+    for(i=0; i<n; i++)
+    {
+        printf("%d  ", a[i]);
+    }
+	printf("\n\n");
 
     return 0;
 }
