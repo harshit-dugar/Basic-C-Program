@@ -14,7 +14,7 @@ int main()
     printf("Enter two numbers");
     scanf("%d %d",&c,&d);
 
-    swap(&c,&d);
+    swap(&c,&d); //call by reference mans using pointers
 
     return 0;
 }
